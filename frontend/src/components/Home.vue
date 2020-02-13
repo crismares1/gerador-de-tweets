@@ -58,11 +58,28 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Home',
   data() {
     return{
-
+      items: []
+    }
+  },
+  created() {
+    this.renderList()
+  },
+  methods: {
+    renderList() {
+      axios.get('/scripts/profiles.json')
+      .then(res => {
+      this.items = res.data
+      window.console.log(this.items)
+      })
+      .catch(err => {
+        window.console.error('Ocorreu um erro ao buscar informações', err)
+      })
     }
   }
 }
