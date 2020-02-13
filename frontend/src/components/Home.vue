@@ -7,6 +7,7 @@
             <div class="form-group">
               <select class="form-control" id="selectUser">
                 <option>Selecione o usuário</option>
+                <option v-for="item in items" :key="item.username" :value="item.username">{{item.name}}</option>
               </select>
             </div>
           </form>
@@ -72,10 +73,9 @@ export default {
   },
   methods: {
     renderList() {
-      axios.get('/scripts/profiles.json')
+      axios.get('https://api.myjson.com/bins/x80j4')
       .then(res => {
       this.items = res.data
-      window.console.log(this.items)
       })
       .catch(err => {
         window.console.error('Ocorreu um erro ao buscar informações', err)
