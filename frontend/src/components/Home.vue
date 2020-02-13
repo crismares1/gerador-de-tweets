@@ -23,7 +23,8 @@
                   </div>
                 </li>
                 <li class="mt-2">
-                    <textarea class="form-control" spellcheck="false" maxlength="280" placeholder="Digite aqui...">Se inscrevam no meu canal</textarea>
+                  <div contenteditable="true" class="editable" placeholder="Digite aqui..." onkeypress="return (this.innerText.length <= 280)">
+                  </div>
                 </li>
                 <li class="details-tweet mt-4">
                   <p class="details-tweet">7:55 PM · 11 de fev de 2020 <a href="https://help.twitter.com/using-twitter/how-to-tweet#source-labels" rel="noopener noreferrer" target="_blank">Twitter Web App</a></p>
@@ -59,7 +60,10 @@
 <script>
 export default {
   name: 'Home',
-  props: {
+  data() {
+    return{
+
+    }
   }
 }
 </script>
@@ -117,23 +121,18 @@ export default {
       top: 9px;
       font-weight: 700;
     }
-    textarea {
-      border: 0;
-      border-radius: 0;
+    .editable {
       box-shadow: none;
-      resize: none;
-      height: 33px;
-      max-height: 400px;
+      border: 0;
+      border-color: transparent;
       outline: none;
-      padding: 0px;
-      overflow: hidden;
-      font-size: 23px;
-      color: #000;
-      display:block;
-      &:active {
-        box-shadow: none;
-        border: none;
-      }
+    }
+    [placeholder]:empty::before {
+      content: attr(placeholder);
+      color: #000; 
+    }
+    [placeholder]:empty:focus::before {
+      content: '';
     }
     .details-tweet {
       p {
@@ -171,33 +170,33 @@ export default {
 @media (max-width: 768px) {
   .select {
     width: 450px !important;
-    overflow: scroll;
+    overflow-y: scroll;
   }
    .tweet {
     width: 450px !important;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 
 @media (max-width: 414px) {
   .select {
     width: 350px !important;
-    overflow: scroll;
+    overflow-y: scroll;
   }
    .tweet {
     width: 350px !important;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 
 @media (max-width: 320px) {
   .select {
     width: 280px !important;
-    overflow: scroll;
+    overflow-y: scroll;
   }
    .tweet {
     width: 280px !important;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 </style>
