@@ -21,7 +21,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 body {
   line-height: 1.5;
   font-weight: 400;

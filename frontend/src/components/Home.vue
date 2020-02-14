@@ -5,22 +5,22 @@
         <div class="select mx-auto">
           <form>
             <div class="form-group">
-              <select class="form-control" id="selectUser">
-                <option>Selecione o usuário</option>
+              <select class="form-control" id="valueSelect" v-model="valueSelect" @change="getSelect()">
+                <option value="">Selecione o usuário</option>
                 <option v-for="item in items" :key="item.username" :value="item.username">{{item.name}}</option>
               </select>
             </div>
           </form>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" v-if="this.valueSelect" ref="tweet">
           <div class="tweet mx-auto">
             <ul class="list-unstyled">
                 <li class="media">
-                  <img class="mr-3 photo" src="https://pbs.twimg.com/profile_images/1160988013599571969/wMUqo4_r_400x400.jpg" alt="nome" />
+                  <img class="mr-3 photo" :src="this.profile.photo" alt="nome" />
                   <div class="media-body">
                     <img src="@/assets/img/bottom-icon.svg" class="icon float-right" alt="ícon bottom" />
-                    <h5 class="mt-0 mb-0">Felipe Neto <img src="@/assets/img/verified-account.png" class="verified-account" /></h5>
-                    <h6 class="mt-0 mb-0">@felipeneto</h6>
+                    <h5 class="mt-0 mb-0">{{this.profile.name}} <img src="@/assets/img/verified-account.png" class="verified-account" /></h5>
+                    <h6 class="mt-0 mb-0">{{`@${this.profile.username}`}}</h6>
                   </div>
                 </li>
                 <li class="mt-2">
@@ -46,12 +46,10 @@
               </ul>
           </div>
         </div>
-        <div class="select mx-auto mt-3">
-          <form>
-            <div class="form-group">
-              <button class="btn btn-primary mx-auto d-block">exportar</button>
-            </div>
-          </form>
+        <div class="select mx-auto mt-3" v-if="this.valueSelect">
+          <div class="form-group">
+            <button class="btn btn-primary mx-auto d-block" @click="exportImg">exportar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -59,13 +57,20 @@
 </template>
 
 <script>
-import axios from 'axios'
+import profiles from '@/json/profiles'
+import domtoimage from 'dom-to-image';
 
 export default {
   name: 'Home',
   data() {
     return{
-      items: []
+      items: [],
+      valueSelect: '',
+      profile: {
+        name: null,
+        username: null,
+        photo: null
+      }
     }
   },
   created() {
@@ -73,13 +78,28 @@ export default {
   },
   methods: {
     renderList() {
-      axios.get('https://api.myjson.com/bins/x80j4')
-      .then(res => {
-      this.items = res.data
+      profiles.forEach(profiles => {
+          this.items.push(profiles)
       })
-      .catch(err => {
-        window.console.error('Ocorreu um erro ao buscar informações', err)
+    },
+    getSelect() {
+      this.items.forEach(profiles => {
+        if (profiles.username === this.valueSelect) {
+          this.profile.name = profiles.name
+          this.profile.username = profiles.username
+          this.profile.photo = profiles.photo
+        }
       })
+    },
+    async exportImg() {
+      const tweet = this.$refs.tweet;
+      const dataUrl = await domtoimage.toPng(tweet);
+      let a = document.createElement('a')
+      document.body.appendChild(a)
+      a.setAttribute('type', 'hidden')
+      a.download = `${this.profile.username}.png`
+      a.href = dataUrl
+      a.click();
     }
   }
 }

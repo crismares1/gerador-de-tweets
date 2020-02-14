@@ -1,8 +1,29 @@
-# gerador-de-tweets
+# frontend
 
-### escolher o framework a utilizar ou utilizar JS puro
-### criar estrutura
-### criar objeto igual do proejto pr maneiro do igor
-### se espelhar no layout do gerador de tweets bolsonaro
-### criar opção de tweet no modo noturno, ou seja criar layout noturno
-### Criar opção de exportar para png, jpg, entre outros
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
