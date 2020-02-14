@@ -6,7 +6,9 @@
 
 ### Como Instalar
 
-<p>Clone o diretório utilizando o comando ```$ git clone https://github.com/oniag/gerador-de-tweets.git```. Após realizar o clone do projeto, vamos entrar na pasta **frontend** utilizando o seguinte comando ```$ cd frontend```e logo em seguida execute ```$ npm install``` e aguarde a instalação das Dependências..</p>
+<p>Clone o diretório utilizando o comando 
+`$ git clone https://github.com/oniag/gerador-de-tweets.git`
+Após realizar o clone do projeto, vamos entrar na pasta **frontend** utilizando o seguinte comando `$ cd frontend` e logo em seguida execute `$ npm install` e aguarde a instalação das Dependências..</p>
 
 ### Quer adicionar mais um perfil?
 
