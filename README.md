@@ -26,7 +26,7 @@ Coloque no arquivo [`profiles.json`](https://github.com/oniag/gerador-de-tweets/
 ]
 ```
 
-Lembre-se de realizar o upload da imagem do perfil no imgur.com e em seguida colocar o nome do usuário na lista abaixo.
+Lembre-se de realizar o upload da imagem do perfil no **imgur.com** e em seguida colocar o nome do usuário na lista abaixo.
 
 
 ### Lista de perfis cadastrados
