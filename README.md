@@ -6,15 +6,15 @@
 
 ### Como Instalar
 
-<p>Clone o diretório utilizando o comando 
+Clone o diretório utilizando o comando 
 `$ git clone https://github.com/oniag/gerador-de-tweets.git`
-Após realizar o clone do projeto, vamos entrar na pasta **frontend** utilizando o seguinte comando `$ cd frontend` e logo em seguida execute `$ npm install` e aguarde a instalação das Dependências..</p>
+Após realizar o clone do projeto, vamos entrar na pasta **frontend** utilizando o seguinte comando `$ cd frontend` e logo em seguida execute `$ npm install` e aguarde a instalação das Dependências..
 
 ### Quer adicionar mais um perfil?
 
-<p>
+
 Coloque no arquivo [`profiles.json`](https://github.com/oniag/gerador-de-tweets/blob/master/frontend/src/json/profiles.json) seguindo o padrão:
-</p>
+
 
 ```json
 [
@@ -25,9 +25,9 @@ Coloque no arquivo [`profiles.json`](https://github.com/oniag/gerador-de-tweets/
   }
 ]
 ```
-<p>
+
 Lembre-se de realizar o upload da imagem do perfil no imgur.com e em seguida colocar o nome do usuário na lista abaixo.
-</p>
+
 
 ### Lista de perfis cadastrados
 
