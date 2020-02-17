@@ -58,7 +58,7 @@
 
 <script>
 import profiles from '@/json/profiles'
-import domtoimage from 'dom-to-image';
+import domtoimage from 'dom-to-image'
 
 export default {
   name: 'Home',
@@ -99,7 +99,7 @@ export default {
       a.setAttribute('type', 'hidden')
       a.download = `${this.profile.username}.png`
       a.href = dataUrl
-      a.click();
+      a.click()
     }
   }
 }
