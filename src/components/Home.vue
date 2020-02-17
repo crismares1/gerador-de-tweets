@@ -6,7 +6,7 @@
           <form>
             <div class="form-group">
               <select class="form-control" id="valueSelect" v-model="valueSelect" @change="getSelect()">
-                <option value="">Selecione o usuário</option>
+                <option value="">Selecione o perfil</option>
                 <option v-for="item in items" :key="item.username" :value="item.username">{{item.name}}</option>
               </select>
             </div>
@@ -93,7 +93,7 @@ export default {
     },
     async exportImg() {
       const tweet = this.$refs.tweet;
-      const dataUrl = await domtoimage.toPng(tweet);
+      const dataUrl = await domtoimage.toPng(tweet)
       let a = document.createElement('a')
       document.body.appendChild(a)
       a.setAttribute('type', 'hidden')

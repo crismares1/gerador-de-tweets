@@ -8,12 +8,12 @@
 
 Clone o diretório utilizando o comando 
 `$ git clone https://github.com/oniag/gerador-de-tweets.git`
-Após realizar o clone do projeto, vamos entrar na pasta **frontend** utilizando o seguinte comando `$ cd frontend` e logo em seguida execute `$ npm install` e aguarde a instalação das Dependências..
+Após realizar o clone do projeto, vamos entrar na pasta do **projeto** utilizando o seguinte comando `$ cd gerador-de-tweets` e logo em seguida execute `$ npm install` e aguarde a instalação das Dependências..
 
 ### Quer adicionar mais um perfil?
 
 
-Coloque no arquivo [`profiles.json`](https://github.com/oniag/gerador-de-tweets/blob/master/frontend/src/json/profiles.json) seguindo o padrão:
+Coloque no arquivo [`profiles.json`](https://github.com/oniag/gerador-de-tweets/blob/master/src/json/profiles.json) seguindo o padrão:
 
 
 ```json
